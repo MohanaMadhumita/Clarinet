@@ -32,7 +32,7 @@ import FPU_Types :: *;
 import FPU       :: *;
 
 `ifdef POSIT
-import PositCore :: *;
+import PositCore_Coproc :: *;
 `endif
 
 // ================================================================
@@ -188,7 +188,8 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    FPU_IFC                 fpu            <- mkFPU;
 
 `ifdef POSIT
-   PositCore_IFC           positCore      <- mkPositCore (verbosity);
+//   PositCore_IFC           positCore      <- mkPositCore (verbosity);
+	PositCore_IFC_accel positCore_accel <- mkPositCore_accel(4'b0);
 `endif
 
    // =============================================================
@@ -295,14 +296,19 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
 
 `ifdef POSIT
    // New opcodes for posit computation
-   let isFCVT_S_P    = (opc == op_FP) && (f7 == f7_FCVT_S_P) && (rs2 == rs2_P);
-   let isFCVT_P_S    = (opc == op_FP) && (f7 == f7_FCVT_P_S) && (rs2 == rs2_S);
-   let isFCVT_R_P    = (opc == op_FP) && (f7 == f7_FCVT_R_P) && (rs2 == rs2_P);
-   let isFCVT_P_R    = (opc == op_FP) && (f7 == f7_FCVT_P_R) && (rs2 == rs2_R);
-   let isFMA_P       = (opc == op_FP) && (f7 == f7_FMA_P);
-   let isFMS_P       = (opc == op_FP) && (f7 == f7_FMS_P);
-   let isFDA_P       = (opc == op_FP) && (f7 == f7_FDA_P);
-   let isFDS_P       = (opc == op_FP) && (f7 == f7_FDS_P);
+//   let isFCVT_S_P    = (opc == op_FP) && (f7 == f7_FCVT_S_P) && (rs2 == rs2_P);
+//   let isFCVT_P_S    = (opc == op_FP) && (f7 == f7_FCVT_P_S) && (rs2 == rs2_S);
+
+//   let isFCVT_R_P    = (opc == op_FP) && (f7 == f7_FCVT_R_P) && (rs2 == rs2_P);
+	let isFCVT_R_P    = (opc == op_FP) && (f7 == f7_FCVT_R_P) ;
+
+//   let isFCVT_P_R    = (opc == op_FP) && (f7 == f7_FCVT_P_R) && (rs2 == rs2_R);
+	let isFCVT_P_R    = (opc == op_FP) && (f7 == f7_FCVT_P_R);
+	
+	let isFMA_P       = (opc == op_FP) && (f7 == f7_FMA_P);
+	let isFMS_P       = (opc == op_FP) && (f7 == f7_FMS_P);
+//   let isFDA_P       = (opc == op_FP) && (f7 == f7_FDA_P);
+//   let isFDS_P       = (opc == op_FP) && (f7 == f7_FDS_P);
 `endif
 
    // =============================================================
@@ -430,13 +436,14 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
       stateR <= FBOX_BUSY;
    endrule
 `endif
-
+//---------------------------------------------------------------------------------------------------------------------------------
 `ifdef POSIT
+/*
    // Execute a floating point to posit conversion instruction
    rule doFCVT_P_S ( validReq && isFCVT_P_S );
       if (verbosity > 1)
          $display ("%0d: %m: doFCVT_P_S ", cur_cycle);
-      positCore.server_core.request.put (
+      positCore_accel.server_core.request.put (
          tuple4 (tagged S sV1, ?, ?, FCVT_P_S));
       stateR <= FBOX_PBUSY;
    endrule
@@ -445,17 +452,17 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    rule doFCVT_S_P ( validReq && isFCVT_S_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFCVT_S_P ", cur_cycle);
-      positCore.server_core.request.put (
+      positCore_accel.server_core.request.put (
          tuple4 (tagged P pV1, ?, rmd, FCVT_S_P));
       stateR <= FBOX_PBUSY;
    endrule
-
+*/
    // Execute a posit to quire conversion instruction
    rule doFCVT_R_P ( validReq && isFCVT_R_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFCVT_R_P ", cur_cycle);
-      positCore.server_core.request.put (
-         tuple4 (tagged P pV1, ?, ?, FCVT_R_P));
+      positCore_accel.server_core.request.put (
+         tuple4 (?, ?, RST_Q, ?));
       stateR <= FBOX_PBUSY;
    endrule
 
@@ -463,8 +470,8 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    rule doFCVT_P_R ( validReq && isFCVT_P_R );
       if (verbosity > 1)
          $display ("%0d: %m: doFCVT_P_R ", cur_cycle);
-      positCore.server_core.request.put (
-         tuple4 (tagged P pV1, ?, ?, FCVT_P_R));
+      positCore_accel.server_core.request.put (
+         tuple4 (?, ?, RD_Q, ?));
       stateR <= FBOX_PBUSY;
    endrule
 
@@ -472,8 +479,8 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    rule doFMA_P ( validReq && isFMA_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFMA_P ", cur_cycle);
-      positCore.server_core.request.put (
-         tuple4 (tagged P pV1, tagged P pV2, ?, FMA_P));
+      positCore_accel.server_core.request.put (
+         tuple4 (tagged S sV1, tagged S sV2, FMA_P, ?));
       stateR <= FBOX_PBUSY;
    endrule
 
@@ -481,16 +488,16 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    rule doFMS_P ( validReq && isFMS_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFMS_P ", cur_cycle);
-      positCore.server_core.request.put (
-         tuple4 (tagged P pV1, tagged P pV2, ?, FMS_P));
+      positCore_accel.server_core.request.put (
+         tuple4 (tagged S sV1, tagged S sV2,FMS_P,  ?));
       stateR <= FBOX_PBUSY;
    endrule
-
+/*
    // Execute a posit fused multiply add instruction into quire
    rule doFDA_P ( validReq && isFDA_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFDA_P ", cur_cycle);
-      positCore.server_core.request.put (
+      positCore_accel.server_core.request.put (
          tuple4 (tagged P pV1, tagged P pV2, ?, FDA_P));
       stateR <= FBOX_PBUSY;
    endrule
@@ -499,11 +506,13 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    rule doFDS_P ( validReq && isFDS_P );
       if (verbosity > 1)
          $display ("%0d: %m: doFDS_P ", cur_cycle);
-      positCore.server_core.request.put (
+      positCore_accel.server_core.request.put (
          tuple4 (tagged P pV1, tagged P pV2, ?, FDS_P));
       stateR <= FBOX_PBUSY;
    endrule
+*/
 `endif
+//-----------------------------------------------------------------------------------------------------------------------------
 
    rule doFSGNJ_S ( validReq && isFSGNJ_S );
       if (verbosity > 1)
@@ -1386,14 +1395,48 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
          $display (  "%0d: %m: rl_get_fpu_result: "
                    , cur_cycle, fshow (r));
    endrule
-
+//-------------------------------------------------------------------------------------------------------------------------
 `ifdef POSIT
    // When the result is from the posit core
    rule rl_get_posit_result (stateR == FBOX_PBUSY);
-      Fpu_Rsp p <- positCore.server_core.response.get ();
-      match {.v, .e} = p;
+//typedef Tuple2#( FloatU, FloatingPoint::Exception ) Fpu_Rsp;
+//typedef Tuple2#( Maybe#(FloatE), Bit #(1) )   Fpu_Rsp_accel
+      Fpu_Rsp_accel p <- positCore_accel.server_core.response.get ();
+      match {.v, .b} = p;
+		$display("p", fshow(p));
+		$display("v", fshow(v));
       Bit #(64) res = ?;
+	  Fpu_Rsp v_out = fromMaybe(?,v);
+		$display("v_out", fshow(v_out));
+		FloatU u_tag = tpl_1(v_out);
+		$display("u_tag", fshow(u_tag));
+		FloatingPoint::Exception e = tpl_2(v_out);
+		$display("e", fshow(e));
 
+	 if (isValid(v))
+		begin
+		if (u_tag matches tagged S .u)		
+//		match {.u, .e} = v_out;
+         if (isNaN (u))
+            res = fv_nanbox (extend (pack (canonicalNaN32)));
+         else
+            res = fv_nanbox (extend (pack (u)));
+		let fcsr = exception_to_fcsr (e);
+      	fa_driveResponse (res, fcsr);
+     	resultR <= tagged Valid (tuple2 (res, fcsr));
+	  	end
+	
+	  else 
+		begin
+		res = 0;
+//		match {.u, .e} = v;
+		let fcsr = exception_to_fcsr (e);
+		resultR <= tagged Invalid;
+		end
+
+      stateR  <= FBOX_RSP;
+		
+/*
       if (v matches tagged P .out)
          res = fv_nanbox (extend (pack (out)));
       else if (v matches tagged S .out)
@@ -1408,12 +1451,14 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
       fa_driveResponse (res, fcsr);
       resultR <= tagged Valid (tuple2 (res, fcsr));
       stateR  <= FBOX_RSP;
+*/
 
       if (verbosity > 1)
          $display (  "%0d: %m: rl_get_posit_result: "
                    , cur_cycle, fshow (p));
    endrule
 `endif
+//--------------------------------------------------------------------------------------------------------------------------
 
    // This rule drives the results from the FBox to the pipeline
    rule rl_drive_fpu_result (stateR == FBOX_RSP);

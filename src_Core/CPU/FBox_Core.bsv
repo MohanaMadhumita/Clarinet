@@ -185,8 +185,7 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    FPU_IFC                 fpu            <- mkFPU;
 
 `ifdef POSIT
-//   PositCore_IFC           positCore      <- mkPositCore (verbosity);
-	PositCore_IFC_accel positCore_accel <- mkPositCore_accel(4'b0);
+	PositCore_IFC_accel positCore_accel <- mkPositCore_accel(verbosity);
 
    Reg   #(Tuple2 #(
         Bit #(64)
@@ -1590,20 +1589,19 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
          else
             res = fv_nanbox (extend (pack (u)));
 		let fcsr = exception_to_fcsr (e);
-      	fa_driveResponse (res, fcsr);
-     	resultR <= tuple2 (res, fcsr);
-		result_valid <= True;
+     	resultR <= tagged Valid (tuple2 (res, fcsr));
+//		result_valid <= True;
 	  	end
 	
 	  else 
 		begin
-		res = 0;
 //		match {.u, .e} = v;
-		let fcsr = exception_to_fcsr (e);
-		resultR <= tuple2 (res,fcsr);
-		result_valid <= False;
+		let fcsr = exception_to_fcsr (0);
+		resultR <= tagged Valid (tuple2 (res,fcsr));
+//		result_valid <= True;
 		end
 
+      fa_driveResponse (res, fcsr);
       stateR  <= FBOX_RSP;
 		
 
@@ -1616,13 +1614,8 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
 
    // This rule drives the results from the FBox to the pipeline
    rule rl_drive_fpu_result (stateR == FBOX_RSP);
-`ifdef POSIT
-      dw_valid    <= result_valid;
-      dw_result   <= resultR;
-`else
       dw_valid    <= isValid (resultR);
       dw_result   <= resultR.Valid;
-`endif
    endrule
 
    // =============================================================

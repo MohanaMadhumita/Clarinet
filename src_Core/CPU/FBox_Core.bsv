@@ -177,6 +177,7 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    Reg   #(Maybe #(FReq))  requestR       <- mkRegU;
 
    Reg   #(Bool)           dw_valid       <- mkDWire (False);
+
    Reg   #(Tuple2 #(
         Bit #(64)
       , Bit #(5)))         dw_result      <- mkDWire (?);
@@ -188,9 +189,11 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
    FPU_IFC                 fpu            <- mkFPU;
 
 `ifdef POSIT
-//   PositCore_IFC           positCore      <- mkPositCore (verbosity);
-	PositCore_IFC_accel positCore_accel <- mkPositCore_accel(4'b0);
+	PositCore_IFC_accel positCore_accel <- mkPositCore_accel(verbosity);
 `endif
+
+
+
 
    // =============================================================
    // Drive response to the pipeline
@@ -1487,59 +1490,39 @@ module mkFBox_Core #(Bit #(4) verbosity) (FBox_Core_IFC);
 `ifdef POSIT
    // When the result is from the posit core
    rule rl_get_posit_result (stateR == FBOX_PBUSY);
-//typedef Tuple2#( FloatU, FloatingPoint::Exception ) Fpu_Rsp;
+//typedef Tuple2#( FloatU, FloatingPoint::Exception ) Fpu_Rsp == FloatE;
 //typedef Tuple2#( Maybe#(FloatE), Bit #(1) )   Fpu_Rsp_accel
       Fpu_Rsp_accel p <- positCore_accel.server_core.response.get ();
-      match {.v, .b} = p;
-		$display("p", fshow(p));
-		$display("v", fshow(v));
+      match {.v, .b} = p;	//v = Fpu_Rsp, b = Bit(1)
       Bit #(64) res = ?;
+//	  Bit #(5) fcsr = ?;
 	  Fpu_Rsp v_out = fromMaybe(?,v);
-		$display("v_out", fshow(v_out));
 		FloatU u_tag = tpl_1(v_out);
-		$display("u_tag", fshow(u_tag));
 		FloatingPoint::Exception e = tpl_2(v_out);
-		$display("e", fshow(e));
+
 
 	 if (isValid(v))
 		begin
 		if (u_tag matches tagged S .u)		
-//		match {.u, .e} = v_out;
          if (isNaN (u))
             res = fv_nanbox (extend (pack (canonicalNaN32)));
          else
             res = fv_nanbox (extend (pack (u)));
 		let fcsr = exception_to_fcsr (e);
-      	fa_driveResponse (res, fcsr);
      	resultR <= tagged Valid (tuple2 (res, fcsr));
+     	fa_driveResponse (res, fcsr);
 	  	end
 	
 	  else 
 		begin
-		res = 0;
-//		match {.u, .e} = v;
-		let fcsr = exception_to_fcsr (e);
-		resultR <= tagged Invalid;
+		let fcsr = 5'b00000;
+		resultR <= tagged Valid (tuple2 (res,0));
+      	fa_driveResponse (res, fcsr);
 		end
 
+//      fa_driveResponse (res, fcsr);
       stateR  <= FBOX_RSP;
 		
-/*
-      if (v matches tagged P .out)
-         res = fv_nanbox (extend (pack (out)));
-      else if (v matches tagged S .out)
-         if (isNaN (out))
-            res = fv_nanbox (extend (pack (canonicalNaN32)));
-         else
-            res = fv_nanbox (extend (pack (out)));
-      else  // posit-core will never give D type
-         res = 0;
-
-      let fcsr = exception_to_fcsr (e);
-      fa_driveResponse (res, fcsr);
-      resultR <= tagged Valid (tuple2 (res, fcsr));
-      stateR  <= FBOX_RSP;
-*/
 
       if (verbosity > 1)
          $display (  "%0d: %m.rl_get_posit_result: ", cur_cycle, fshow (p));

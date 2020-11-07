@@ -2,6 +2,7 @@
 #include "clarinet.h"
 
 // the _p_ indicates that the input values are posit type
+#ifdef POSIT
 void fn_posit_p_fma (unsigned int a, unsigned int b) {
    // input posit values in GPR
    register unsigned int gA asm ("a0") = a;
@@ -19,6 +20,26 @@ void fn_posit_p_fma (unsigned int a, unsigned int b) {
    asm ("fma.p    ft0, ft0, ft1" : "=f" (pA) : "f" (pA), "f" (pB));
    return;
 }
+
+void fn_init_p_quire (unsigned int initVal) {
+   register unsigned int gI asm ("a0") = initVal;
+   register float pI asm ("ft1");
+   register float q  asm ("ft0");
+   asm ("pmv.w.x ft1, a0" : "=f" (pI) : "r" (gI));
+   // for instrns which do not have a rd, using zeros for the rd
+   // field is necessary as that is the instruction encoding.
+   asm ("fcvt.r.p ft0, ft1" : "=f" (q) : "f" (pI));
+   return;
+}
+
+unsigned int fn_read_p_quire (void) {
+   register float pQ asm ("f0");
+   register float gO asm ("a0");
+   asm ("fcvt.p.r f0, f0" : "=f" (pQ) : "f" (pQ));
+   asm ("pmv.x.w  a0, f0" : "=r" (gO) : "f" (pQ));
+   return (gO);
+}
+#endif
 
 void fn_posit_fma (float a, float b) {
    // input float values
@@ -50,17 +71,7 @@ float fn_float_fma (float a, float b, float acc) {
    return (f_res);
 }
 
-// the _p_ indicates that the input values are posit type
-void fn_init_p_quire (unsigned int initVal) {
-   register unsigned int gI asm ("a0") = initVal;
-   register float pI asm ("ft1");
-   register float q  asm ("ft0");
-   asm ("pmv.w.x ft1, a0" : "=f" (pI) : "r" (gI));
-   // for instrns which do not have a rd, using zeros for the rd
-   // field is necessary as that is the instruction encoding.
-   asm ("fcvt.r.p ft0, ft1" : "=f" (q) : "f" (pI));
-   return;
-}
+
 
 void fn_init_quire (float initVal) {
    register float fI asm ("fa0") = initVal;
@@ -73,13 +84,6 @@ void fn_init_quire (float initVal) {
    return;
 }
 
-unsigned int fn_read_p_quire (void) {
-   register float pQ asm ("f0");
-   register float gO asm ("a0");
-   asm ("fcvt.p.r f0, f0" : "=f" (pQ) : "f" (pQ));
-   asm ("pmv.x.w  a0, f0" : "=r" (gO) : "f" (pQ));
-   return (gO);
-}
 
 float fn_read_quire (void) {
    register float pQ asm ("f0");

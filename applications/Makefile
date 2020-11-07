@@ -29,7 +29,7 @@ endif
 
 # Must have a / at the end
 # Can be blank if you just want to use PATH
-TOOLCHAIN?=/home/nsharma/x-tools/riscv32-unknown-elf/bin/
+TOOLCHAIN?=/home/madhumita/x-tools/riscv32-unknown-elf/bin/
 
 CROSS_COMPILE?=riscv$(XLEN)-unknown-elf-
 

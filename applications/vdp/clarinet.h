@@ -12,3 +12,4 @@ void fn_posit_accel_fma (float a, float b);
 void fn_reset_accel_quire (void);
 float fn_read_accel_quire (void);
 #endif
+

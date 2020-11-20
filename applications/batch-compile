@@ -1,0 +1,234 @@
+#!/usr/bin/python3
+import os
+import sys
+import shutil
+import subprocess
+import logging
+import datetime
+import argparse
+
+"""
+Compiles all the different variants of the VDP program, and then runs each of them in simulations.
+Ensure that you the RV tools in your path, and the verilator simulator executables are already created.
+"""
+
+CWD = os.getcwd ()
+HW_BDIR = os.path.join (CWD, '..', '..', 'builds')
+
+#------------------------
+"""
+Create a logger
+"""
+def fn_createLogger (debug, thisScript):
+    # Create a journal file to log all activity from this run
+    now = datetime.datetime.now ()
+    journalFName = thisScript + '-' + now.strftime("%Y%m%d_%H%M") + ".jou"
+    journalPath  = os.path.join (CWD, journalFName)
+    if debug == True :
+        logging.basicConfig (
+                  filename=journalPath
+                , filemode='w'
+                , level=logging.DEBUG
+                , format='[%(asctime)s][%(levelname)5s] %(message)s'
+                , datefmt='%H:%M:%S')
+    else :
+        logging.basicConfig (
+                  filename=journalPath
+                , filemode='w'
+                , level=logging.INFO
+                , format='[%(asctime)s][%(levelname)5s] %(message)s'
+                , datefmt='%H:%M:%S')
+
+    # Define a Handler which writes INFO messages or higher to the sys.stderr
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+
+    # set a format for console logs (simplified - no time-stamp)
+    formatter = logging.Formatter('[%(levelname)5s]: %(message)s')
+
+    # tell the handler to use this format
+    console.setFormatter(formatter)
+
+    # Add the handler to the root logger
+    logging.getLogger('').addHandler(console)
+    return
+
+
+""" Renames compile output depending on type, pw and rep """
+
+def fn_rename_files (f, main_prog, data_type, pw, rep) :
+    if data_type == 'FLOAT' : prefix = data_type + '.' + str(rep)
+    else                    : prefix = data_type + '-' + str(pw) + '.' + str(rep) 
+
+    # rename the binary as a .elf file
+    if f == main_prog : new_file = prefix + '.' + main_prog + '.elf'
+    else              : new_file = prefix + '.' + f
+
+    return new_file
+    
+
+def main (argv) :
+    # Command-line parsing
+    parser = argparse.ArgumentParser (
+              formatter_class=argparse.RawDescriptionHelpFormatter
+            , description="Automates running app sims")
+
+    parser.add_argument (
+              '--sim'
+            , action="store_true"
+            , dest='sim'
+            , default=False
+            , help="""Run simulations\n""")
+
+    parser.add_argument (
+              '--compile'
+            , action="store_true"
+            , dest='compile'
+            , default=False
+            , help="""Compile to elf\n""")
+
+    parser.add_argument(
+              '--main'
+            , action="store"
+            , dest='main'
+            , default='vdp'
+            , help="""The main program that we are compiling for\n"""
+            )
+
+    args = parser.parse_args()
+    do_sim = args.sim
+    do_compile = args.compile
+    main_prog = args.main
+
+    fn_createLogger (True, 'batch-compile') 
+    data_types = ['FLOAT', 'FLOAT_POSIT', 'POSIT']
+    reps  = [8, 16, 32, 64, 128, 256]
+
+    if do_compile : 
+        compile_files_to_move = [main_prog, (main_prog+'.dump')]
+
+        makeLogFile = os.path.join(CWD, "make.log")
+        try : makeLog = open (makeLogFile, "w")
+        except :
+            logging.error ("Unable to open '%s' for writing", makeLogFile)
+            sys.exit (1)
+
+        main_val = 'MAIN=vdp'
+        for data_type in data_types :
+            data_type_val = 'TYPE='+data_type
+
+            if data_type == 'FLOAT' : pwidths = [8]
+            else               : pwidths = [8, 16, 24, 32]
+
+            for pw in pwidths :
+                pw_val = 'PWIDTH=PWIDTH_'+str(pw)
+                for rep in reps :
+                    rep_val = 'REP='+str(rep)
+                    logging.info ("make %s %s %s %s all", main_val, data_type_val, rep_val, pw_val)
+                    makeID = subprocess.Popen (
+                                    [     "/usr/bin/make"
+                                        , main_val
+                                        , data_type_val
+                                        , rep_val
+                                        , pw_val
+                                        , 'all'
+                                    ]
+                                , stdout=makeLog
+                                , stderr=subprocess.STDOUT
+                                , cwd=CWD)
+                    makeID.wait()
+
+                    if makeID.returncode == 0 :
+                        logging.info ("%s build: Success", main_prog)
+                        # Name the executable and dump as per configuration
+                        for f in compile_files_to_move :
+                            new_f = fn_rename_files (f, main_prog, data_type, pw, rep)
+
+                            shutil.move (os.path.join (CWD, f), os.path.join (CWD, new_f))
+                            logging.debug ("mv %s %s", os.path.join (CWD, f), os.path.join (CWD, new_f))
+
+                        # Clean up
+                        makeID = subprocess.Popen (
+                                        [     "/usr/bin/make"
+                                            , main_val
+                                            , data_type_val
+                                            , rep_val
+                                            , 'clean'
+                                        ]
+                                    , stdout=makeLog
+                                    , stderr=subprocess.STDOUT
+                                    , cwd=CWD)
+                        makeID.wait()
+                    else : logging.error ("%s build: Failure", main_prog)
+        makeLog.close ()
+
+    if do_sim :
+        simLogFile = os.path.join(CWD, "sim.log")
+        try : simLog = open (simLogFile, "w")
+        except :
+            logging.error ("Unable to open '%s' for writing", simLogFile)
+            sys.exit (1)
+
+        for data_type in data_types :
+            data_type_val = 'TYPE='+data_type
+
+            if data_type == 'FLOAT' : pwidths = [8]
+            else                    : pwidths = [8, 16, 24, 32]
+
+            for pw in pwidths :
+                pw_val = 'PWIDTH=PWIDTH_'+str(pw)
+                for rep in reps :
+                    rep_val = 'REP='+str(rep)
+
+                    # Run the simulation
+                    # do not include Posit HW for a pure FP run 
+                    if data_type == 'FLOAT' : hw_dir_name = 'RV32ACFIMSU_verilator'
+                    else                    : hw_dir_name = 'RV32ACFIMSU_P'+str(pw)+'_verilator'
+
+                    hw_dir_path = os.path.join (HW_BDIR, hw_dir_name)
+
+                    # get the name of the .elf file by applying the renaming recipe
+                    test_elf_name = fn_rename_files (main_prog, main_prog, data_type, pw, rep)
+                    test_path = os.path.join (CWD, test_elf_name)
+                    example_val = 'EXAMPLE='+test_path
+
+                    logging.info ("Simulating %s on %s", test_elf_name, hw_dir_name)
+                    simLog.write ("-------- Simulating %s on %s --------\n"
+                            %(test_elf_name, hw_dir_name))
+
+                    simID = subprocess.Popen (
+                              [     '/usr/bin/make'
+                                  , '-f'
+                                  , os.path.join (hw_dir_path, 'Makefile')
+                                  , 'run_example'
+                                  , example_val
+                                  ]
+                            , stdout=simLog
+                            , stderr=subprocess.STDOUT
+                            , cwd = hw_dir_path
+                            )
+                    simID.wait ()
+                    simLog.write ("\n\n")
+
+                    # Save the vcd dumps for further processing
+                    if data_type == 'FLOAT' : vcd_saved_dir = data_type+'.'+str(rep)+'.vcd'
+                    else                    : vcd_saved_dir = data_type+'-'+str(pw)+'.'+str(rep)+'.vcd'
+
+                    shutil.copytree (os.path.join (hw_dir_path, 'vcd')
+                                   , os.path.join (CWD, vcd_saved_dir))
+                    shutil.rmtree (os.path.join (hw_dir_path, 'vcd'))
+                    logging.info ("Saving VCD files to %s"
+                            , os.path.join (CWD, vcd_saved_dir))
+
+        simLog.close ()
+
+    if (not do_compile) and (not do_sim) :
+        logging.error ("Specify atleast one activity: compile or sim")
+
+    return 0
+
+# ================================================================
+# For non-interactive invocations, call main() and use its return value
+# as the exit code.
+if __name__ == '__main__':
+  sys.exit (main (sys.argv))

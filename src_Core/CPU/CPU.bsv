@@ -314,7 +314,7 @@ module mkCPU (CPU_IFC);
       action
 	 if ((cur_verbosity >= 1) || ((instret & 'h_F_FFFF) == 0))
 	    $display ("(%06d): instret:%0d  PC:0x%0h  instr:0x%0h  priv:%0d",
-		      cycle, instret, pc, instr, priv);
+		       cycle, instret, pc, instr, priv);
       endaction
    endfunction
 

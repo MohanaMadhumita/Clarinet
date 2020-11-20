@@ -8,7 +8,7 @@
 REP ?= 8
 
 # The type of computation being run (POSIT, FLOAT_POSIT, FLOAT)
-TYPE ?= POSIT
+TYPE ?= FLOAT_POSIT
 
 # The width of the posit input data values. This is only relevant when TYPE = POSIT
 PWIDTH ?= PWIDTH_8
@@ -18,6 +18,7 @@ PWIDTH ?= PWIDTH_8
 APP_FLAGS = -D$(TYPE)
 APP_FLAGS += -DREP=$(REP)
 APP_FLAGS += -D$(PWIDTH)
+#APP_FLAGS += -DACCEL
 
 include ../Makefile
 

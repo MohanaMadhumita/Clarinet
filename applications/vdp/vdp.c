@@ -67,6 +67,19 @@ float fn_posit_vdp (int r) {
 }
 #endif
 
+#ifdef ACCEL
+float fn_posit_accel_vdp (int r) {
+   float acc = 0.0;
+   int idx = 0;
+   int rep = 0;
+   fn_reset_accel_quire ();
+   for (rep=0; rep < r; rep ++)
+      for (idx=0; idx<VSZ; idx++) fn_posit_accel_fma (v_a[idx], v_b[idx]);
+   acc = fn_read_accel_quire ();
+   return (acc);
+}
+#endif
+
 float fn_float_vdp (int r) {
    float acc = 0.0;
    int idx = 0;
@@ -116,9 +129,13 @@ int main (void) {
 
 #ifdef FLOAT_POSIT
    start=read_cycle();
-   acc2 = fn_posit_vdp (REP);
+	#ifdef ACCEL
+	acc2 = fn_posit_accel_vdp (REP);
+	#else
+    acc2 = fn_posit_vdp (REP);
+	#endif
    end=read_cycle();
-   printf("Float VDP With Posits: %d cycles have elapsed.\n",(end-start));
+   printf("Float VDP With Posits: %d cycles have elapsed.\n",(end-start));	
 #endif
 
 #ifdef POSIT
@@ -127,6 +144,8 @@ int main (void) {
    end=read_cycle();
    printf("Native Posit VDP: %d cycles have elapsed.\n",(end-start));
 #endif
+
+
 
    return (0);
 }

@@ -1,0 +1,216 @@
+[11:45:54][ INFO] make MAIN=vdp TYPE=FLOAT REP=8 PWIDTH=PWIDTH_8 all
+[11:45:55][ INFO] vdp build: Success
+[11:45:55][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.8
+[11:45:55][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.8
+[11:45:55][ INFO] make MAIN=vdp TYPE=FLOAT REP=16 PWIDTH=PWIDTH_8 all
+[11:45:55][ INFO] vdp build: Success
+[11:45:55][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.16
+[11:45:55][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.16
+[11:45:55][ INFO] make MAIN=vdp TYPE=FLOAT REP=32 PWIDTH=PWIDTH_8 all
+[11:45:56][ INFO] vdp build: Success
+[11:45:56][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.32
+[11:45:56][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.32
+[11:45:56][ INFO] make MAIN=vdp TYPE=FLOAT REP=64 PWIDTH=PWIDTH_8 all
+[11:45:56][ INFO] vdp build: Success
+[11:45:56][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.64
+[11:45:56][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.64
+[11:45:56][ INFO] make MAIN=vdp TYPE=FLOAT REP=128 PWIDTH=PWIDTH_8 all
+[11:45:57][ INFO] vdp build: Success
+[11:45:57][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.128
+[11:45:57][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.128
+[11:45:57][ INFO] make MAIN=vdp TYPE=FLOAT REP=256 PWIDTH=PWIDTH_8 all
+[11:45:57][ INFO] vdp build: Success
+[11:45:57][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.256
+[11:45:57][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT.256
+[11:45:57][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_8 all
+[11:45:58][ INFO] vdp build: Success
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.8
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.8
+[11:45:58][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_8 all
+[11:45:58][ INFO] vdp build: Success
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.16
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.16
+[11:45:58][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_8 all
+[11:45:58][ INFO] vdp build: Success
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.32
+[11:45:58][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.32
+[11:45:58][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_8 all
+[11:45:59][ INFO] vdp build: Success
+[11:45:59][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.64
+[11:45:59][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.64
+[11:45:59][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_8 all
+[11:45:59][ INFO] vdp build: Success
+[11:45:59][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.128
+[11:45:59][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.128
+[11:45:59][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_8 all
+[11:46:00][ INFO] vdp build: Success
+[11:46:00][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.256
+[11:46:00][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-8.256
+[11:46:00][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_16 all
+[11:46:00][ INFO] vdp build: Success
+[11:46:00][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.8
+[11:46:00][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.8
+[11:46:00][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_16 all
+[11:46:01][ INFO] vdp build: Success
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.16
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.16
+[11:46:01][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_16 all
+[11:46:01][ INFO] vdp build: Success
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.32
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.32
+[11:46:01][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_16 all
+[11:46:01][ INFO] vdp build: Success
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.64
+[11:46:01][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.64
+[11:46:01][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_16 all
+[11:46:02][ INFO] vdp build: Success
+[11:46:02][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.128
+[11:46:02][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.128
+[11:46:02][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_16 all
+[11:46:02][ INFO] vdp build: Success
+[11:46:02][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.256
+[11:46:02][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-16.256
+[11:46:02][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_24 all
+[11:46:03][ INFO] vdp build: Success
+[11:46:03][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.8
+[11:46:03][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.8
+[11:46:03][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_24 all
+[11:46:03][ INFO] vdp build: Success
+[11:46:03][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.16
+[11:46:03][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.16
+[11:46:03][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_24 all
+[11:46:04][ INFO] vdp build: Success
+[11:46:04][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.32
+[11:46:04][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.32
+[11:46:04][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_24 all
+[11:46:04][ INFO] vdp build: Success
+[11:46:04][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.64
+[11:46:04][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.64
+[11:46:04][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_24 all
+[11:46:05][ INFO] vdp build: Success
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.128
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.128
+[11:46:05][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_24 all
+[11:46:05][ INFO] vdp build: Success
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.256
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-24.256
+[11:46:05][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_32 all
+[11:46:05][ INFO] vdp build: Success
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.8
+[11:46:05][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.8
+[11:46:05][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_32 all
+[11:46:06][ INFO] vdp build: Success
+[11:46:06][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.16
+[11:46:06][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.16
+[11:46:06][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_32 all
+[11:46:06][ INFO] vdp build: Success
+[11:46:06][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.32
+[11:46:06][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.32
+[11:46:06][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_32 all
+[11:46:07][ INFO] vdp build: Success
+[11:46:07][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.64
+[11:46:07][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.64
+[11:46:07][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_32 all
+[11:46:07][ INFO] vdp build: Success
+[11:46:07][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.128
+[11:46:07][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.128
+[11:46:07][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_32 all
+[11:46:08][ INFO] vdp build: Success
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.256
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/FLOAT_POSIT-32.256
+[11:46:08][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_8 all
+[11:46:08][ INFO] vdp build: Success
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.8
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.8
+[11:46:08][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_8 all
+[11:46:08][ INFO] vdp build: Success
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.16
+[11:46:08][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.16
+[11:46:08][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_8 all
+[11:46:09][ INFO] vdp build: Success
+[11:46:09][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.32
+[11:46:09][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.32
+[11:46:09][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_8 all
+[11:46:09][ INFO] vdp build: Success
+[11:46:09][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.64
+[11:46:09][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.64
+[11:46:09][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_8 all
+[11:46:10][ INFO] vdp build: Success
+[11:46:10][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.128
+[11:46:10][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.128
+[11:46:10][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_8 all
+[11:46:10][ INFO] vdp build: Success
+[11:46:10][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.256
+[11:46:10][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-8.256
+[11:46:10][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_16 all
+[11:46:11][ INFO] vdp build: Success
+[11:46:11][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.8
+[11:46:11][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.8
+[11:46:11][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_16 all
+[11:46:11][ INFO] vdp build: Success
+[11:46:11][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.16
+[11:46:11][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.16
+[11:46:11][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_16 all
+[11:46:12][ INFO] vdp build: Success
+[11:46:12][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.32
+[11:46:12][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.32
+[11:46:12][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_16 all
+[11:46:12][ INFO] vdp build: Success
+[11:46:12][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.64
+[11:46:12][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.64
+[11:46:12][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_16 all
+[11:46:13][ INFO] vdp build: Success
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.128
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.128
+[11:46:13][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_16 all
+[11:46:13][ INFO] vdp build: Success
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.256
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-16.256
+[11:46:13][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_24 all
+[11:46:13][ INFO] vdp build: Success
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.8
+[11:46:13][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.8
+[11:46:13][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_24 all
+[11:46:14][ INFO] vdp build: Success
+[11:46:14][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.16
+[11:46:14][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.16
+[11:46:14][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_24 all
+[11:46:14][ INFO] vdp build: Success
+[11:46:14][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.32
+[11:46:14][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.32
+[11:46:14][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_24 all
+[11:46:15][ INFO] vdp build: Success
+[11:46:15][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.64
+[11:46:15][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.64
+[11:46:15][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_24 all
+[11:46:15][ INFO] vdp build: Success
+[11:46:15][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.128
+[11:46:15][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.128
+[11:46:15][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_24 all
+[11:46:16][ INFO] vdp build: Success
+[11:46:16][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.256
+[11:46:16][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-24.256
+[11:46:16][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_32 all
+[11:46:16][ INFO] vdp build: Success
+[11:46:16][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.8
+[11:46:16][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.8
+[11:46:16][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_32 all
+[11:46:17][ INFO] vdp build: Success
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.16
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.16
+[11:46:17][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_32 all
+[11:46:17][ INFO] vdp build: Success
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.32
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.32
+[11:46:17][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_32 all
+[11:46:17][ INFO] vdp build: Success
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.64
+[11:46:17][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.64
+[11:46:17][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_32 all
+[11:46:18][ INFO] vdp build: Success
+[11:46:18][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.128
+[11:46:18][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.128
+[11:46:18][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_32 all
+[11:46:18][ INFO] vdp build: Success
+[11:46:18][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.256
+[11:46:18][DEBUG] mv /home/madhumita/bsc/Clarinet/applications/vdp/vdp.dump /home/madhumita/bsc/Clarinet/applications/vdp/POSIT-32.256

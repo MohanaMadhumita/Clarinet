@@ -1,0 +1,108 @@
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=8 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=16 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=32 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=64 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=128 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT REP=256 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=8 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=16 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=32 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=64 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=128 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=FLOAT_POSIT REP=256 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_8 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_16 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_24 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=8 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=16 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=32 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=64 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=128 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure
+[11:33:27][ INFO] make MAIN=vdp TYPE=POSIT REP=256 PWIDTH=PWIDTH_32 all
+[11:33:27][ERROR] vdp build: Failure

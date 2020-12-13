@@ -18,7 +18,7 @@ PWIDTH ?= PWIDTH_8
 APP_FLAGS = -D$(TYPE)
 APP_FLAGS += -DREP=$(REP)
 APP_FLAGS += -D$(PWIDTH)
-#APP_FLAGS += -DACCEL
+APP_FLAGS += -DACCEL
 
 include ../Makefile
 

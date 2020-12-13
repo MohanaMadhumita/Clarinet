@@ -52,6 +52,7 @@ CFLAGS += -I../lib
 
 # needed for riscv_counters.c
 CFLAGS += -DRV$(XLEN)
+CFLAGS += $(APP_FLAGS)
 
 
 LDLIBS += -lm
